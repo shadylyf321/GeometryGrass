@@ -19,7 +19,13 @@ Material:
   m_SavedProperties:
     serializedVersion: 3
     m_TexEnvs: []
-    m_Floats: []
+    m_Floats:
+    - _BendRotation: 0.32
+    - _BladeHeight: 0.5
+    - _BladeHeightRandom: 0.3
+    - _BladeWidth: 0.05
+    - _BladeWidthRandom: 0.02
+    - _TessellationUniform: 10
     m_Colors:
     - _BColor: {r: 0.017799927, g: 0.754717, b: 0.017799927, a: 1}
     - _Color: {r: 0.9528302, g: 0.9528302, b: 0.9528302, a: 1}

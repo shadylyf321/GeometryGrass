@@ -61,13 +61,12 @@ appdata hull(InputPatch<appdata, 3> patch, uint id : SV_OutputControlPointID)
 v2g domain(TessellationFactors factors, OutputPatch<appdata, 3> patch, float3 barycentricCoordinates : SV_DomainLocation)
 {
     appdata v;
-    // #define DOMAIN_PROGRAME_INTERPOLATE(filedName)\
-    // v.filedName = patch[0].filedName * barycentricCoordinates.x + \
-    //               patch[1].filedName * barycentricCoordinates.y + \
-    //               patch[2].filedName * barycentricCoordinates.z;
-    // DOMAIN_PROGRAME_INTERPOLATE(vertex);
-    // DOMAIN_PROGRAME_INTERPOLATE(normal);
-    // DOMAIN_PROGRAME_INTERPOLATE(tangent);
-    v.vertex = patch[0].vertex;
+     #define DOMAIN_PROGRAME_INTERPOLATE(filedName)\
+     v.filedName = patch[0].filedName * barycentricCoordinates.x + \
+                   patch[1].filedName * barycentricCoordinates.y + \
+                   patch[2].filedName * barycentricCoordinates.z;
+     DOMAIN_PROGRAME_INTERPOLATE(vertex);
+     DOMAIN_PROGRAME_INTERPOLATE(normal);
+     DOMAIN_PROGRAME_INTERPOLATE(tangent);
     return tessVert(v);
 }
